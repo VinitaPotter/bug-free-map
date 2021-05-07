@@ -67,7 +67,7 @@
       drawFreeHand() {
         const flightPlanCoordinates = [];
         let flightPath;
-        const move = this.map.addListener("mousemove", (e) => {
+        const move = this.map.addListener("touchstart", (e) => {
           flightPlanCoordinates.push(e.latLng);
           flightPath = new google.maps.Polyline({
             path: flightPlanCoordinates,
