@@ -59,9 +59,9 @@
 
       draw_line(mode) {
         this.drawingManager.setDrawingMode(null);
-        google.maps.event.addDomListener(this.map, "click", (e) => {
-          this.drawFreeHand();
-        });
+        // google.maps.event.addDomListener(this.map, "click", (e) => {
+        this.drawFreeHand();
+        // });
       },
 
       drawFreeHand() {
