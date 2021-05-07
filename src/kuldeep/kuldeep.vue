@@ -68,6 +68,7 @@
         const flightPlanCoordinates = [];
         let flightPath;
         const move = this.map.addListener("dragstart", (e) => {
+          e.preventDefault();
           flightPlanCoordinates.push(e.latLng);
           flightPath = new google.maps.Polyline({
             path: flightPlanCoordinates,
@@ -79,6 +80,7 @@
           flightPath.setMap(this.map);
         });
         this.map.addListener("dragend", (e) => {
+          e.preventDefault();
           alert("dragend");
           //TODO: Both Event removers not working
           // google.maps.event.removeListener(move);
