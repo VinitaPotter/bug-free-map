@@ -67,7 +67,7 @@
       drawFreeHand() {
         const flightPlanCoordinates = [];
         let flightPath;
-        const move = this.map.addListener("touchstart", (e) => {
+        const move = this.map.addListener("dragstart", (e) => {
           flightPlanCoordinates.push(e.latLng);
           flightPath = new google.maps.Polyline({
             path: flightPlanCoordinates,
@@ -78,7 +78,8 @@
           });
           flightPath.setMap(this.map);
         });
-        this.map.addListener("dblclick", (e) => {
+        this.map.addListener("dragend", (e) => {
+          alert("dragend");
           //TODO: Both Event removers not working
           // google.maps.event.removeListener(move);
           google.maps.event.clearInstanceListeners(this.map);
