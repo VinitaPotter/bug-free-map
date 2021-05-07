@@ -1,24 +1,26 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Vinita from "@/vinita/vinita"
-import Kuldeep from "@/kuldeep/kuldeep"
-Vue.use(VueRouter)
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Vinita from "@/vinita/vinita";
+import Kuldeep from "@/kuldeep/kuldeep";
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path:"",
-    component:Vinita
+    path: "",
+    component: Vinita,
+    name: "Home",
   },
   {
-    path:"/kuldeep",
-    component:Kuldeep
-  }
-]
+    path: "/kuldeep",
+    name: "Kuldeep",
+    component: Kuldeep,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
